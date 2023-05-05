@@ -1,0 +1,7 @@
+.drum-pad {
+    background-color: brown;
+    border: 2px yellow solid;
+    border-radius: 5px;
+    width: 5vw;
+    height: 5vh;
+  }
