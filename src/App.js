@@ -1,6 +1,8 @@
 import DrumPad from "./components/DrumPad.js"
 //styles
 import './App.css';
+//sounds
+import  pianoAMajor  from '../public/piano keys audio/piano-a_A_major.wav'
 
 
 
@@ -9,47 +11,47 @@ function App() {
     {
       kbdletter: 'Q',
       sound: 'piano-A-major',
-      audiocrs: ''
+      audiosrc: pianoAMajor
     }, 
     {
       kbdletter: 'W',
       sound: 'piano-B-major',
-      audiocrs: ''
+      audiosrc: ''
     },
     {
       kbdletter: 'E',
       sound: 'piano-C-major',
-      audiocrs: ''
+      audiosrc: ''
     },
     {
       kbdletter: 'A',
       sound: 'piano-D-major',
-      audiocrs: ''
+      audiosrc: ''
     },
     {
       kbdletter: 'S',
       sound: 'piano-E-major',
-      audiocrs: ''
+      audiosrc: ''
     },
     {
       kbdletter: 'D',
       sound: 'piano-F-major',
-      audiocrs: ''
+      audiosrc: ''
     },
     {
       kbdletter: 'Z',
       sound: 'piano-F-sharp',
-      audiocrs: ''
+      audiosrc: ''
     },
     {
       kbdletter: 'X',
       sound: 'piano-G-major',
-      audiocrs: ''
+      audiosrc: ''
     }, 
     {
       kbdletter: 'C',
       sound: 'piano-G-sharp',
-      audiocrs: ''
+      audiosrc: ''
     }
   ]
   return (

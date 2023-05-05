@@ -7,7 +7,7 @@ function DrumPad({ props }) {
     <div className='drum-pad'>
       <kbd>{props.kbdletter}</kbd>
       <span class="sound">{props.sound}</span>  
-      <audio crs={props.audiocrs}></audio>
+      <audio srs={props.audiosrc}></audio>
     </div>
   )
 }
