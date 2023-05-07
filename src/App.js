@@ -2,7 +2,7 @@ import DrumPad from "./components/DrumPad.js"
 //styles
 import './App.css';
 //sounds
-import  pianoAMajor  from '../public/piano keys audio/piano-a_A_major.wav'
+import  pianoAMajor  from '../src/piano keys audio/piano-a_A_major.wav'
 
 
 
