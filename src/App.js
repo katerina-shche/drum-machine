@@ -2,7 +2,15 @@ import DrumPad from "./components/DrumPad.js"
 //styles
 import './App.css';
 //sounds
-import  pianoAMajor  from '../src/piano keys audio/piano-a_A_major.wav'
+import pianoAmajor from './assets/piano-a_A_major.wav'; 
+import pianoBmajor from './assets/piano-b_B_major.wav';
+import pianoCmajor from './assets/piano-c_C_major.wav';
+import pianoDmajor from './assets/piano-d_D_major.wav'
+import pianoEmajor from './assets/piano-e_E_major.wav'
+import pianoFmajor from './assets/piano-f_F_major.wav'
+import pianoFsharpmajor from './assets/piano-f_F#_major.wav'
+import pianoGmajor from './assets/piano-g_G_major.wav'
+import pianoGsharpmajor from './assets/piano-g_G#_major.wav'
 
 
 
@@ -11,47 +19,66 @@ function App() {
     {
       kbdletter: 'Q',
       sound: 'piano-A-major',
-      audiosrc: pianoAMajor
+      audiosrc: pianoAmajor,
+      volume: 0.5,
+      isPlaying: true,
+      'data-key': 81
     }, 
     {
       kbdletter: 'W',
       sound: 'piano-B-major',
-      audiosrc: ''
+      audiosrc: pianoBmajor,
+      volume: 0.5,
+      isPlaying: true
     },
     {
       kbdletter: 'E',
       sound: 'piano-C-major',
-      audiosrc: ''
+      audiosrc: pianoCmajor,
+      volume: 0.5,
+      isPlaying: true
     },
     {
       kbdletter: 'A',
       sound: 'piano-D-major',
-      audiosrc: ''
+      audiosrc: pianoDmajor,
+      volume: 0.5,
+      isPlaying: true
     },
     {
       kbdletter: 'S',
       sound: 'piano-E-major',
-      audiosrc: ''
+      audiosrc: pianoEmajor,
+      volume: 0.5,
+      isPlaying: true
     },
     {
       kbdletter: 'D',
       sound: 'piano-F-major',
-      audiosrc: ''
+      audiosrc: pianoFmajor,
+      volume: 0.5,
+      isPlaying: true
     },
     {
       kbdletter: 'Z',
       sound: 'piano-F-sharp',
-      audiosrc: ''
+      audiosrc: pianoFsharpmajor,
+      volume: 0.5,
+      isPlaying: true
     },
     {
       kbdletter: 'X',
       sound: 'piano-G-major',
-      audiosrc: ''
+      audiosrc: pianoGmajor,
+      volume: 0.5,
+      isPlaying: true
     }, 
     {
       kbdletter: 'C',
       sound: 'piano-G-sharp',
-      audiosrc: ''
+      audiosrc: pianoGsharpmajor,
+      volume: 0.5,
+      isPlaying: true
     }
   ]
   return (
