@@ -6,8 +6,12 @@ function DrumPad({ props }) {
   return (
     <div className='drum-pad'>
       <kbd>{props.kbdletter}</kbd>
-      <span class="sound">{props.sound}</span>  
-      <audio srs={props.audiosrc}></audio>
+      <span className="sound">{props.sound}</span>  
+      <audio id={props.kbdletter}
+        className="clip"
+        srs={props.audiosrc}>
+
+      </audio>
     </div>
   )
 }
