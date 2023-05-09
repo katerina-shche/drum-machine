@@ -9,8 +9,7 @@ function DrumPad({ props }) {
       <span className="sound">{props.sound}</span>  
       <audio id={props.kbdletter}
         className="clip"
-        srs={props.audiosrc}>
-
+        src={props.audiosrc}>
       </audio>
     </div>
   )

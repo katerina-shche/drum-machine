@@ -19,66 +19,47 @@ function App() {
     {
       kbdletter: 'Q',
       sound: 'piano-A-major',
-      audiosrc: pianoAmajor,
-      volume: 0.5,
-      isPlaying: false,
-      'data-key': 81
+      audiosrc: pianoAmajor
     }, 
     {
       kbdletter: 'W',
       sound: 'piano-B-major',
-      audiosrc: pianoBmajor,
-      volume: 0.5,
-      isPlaying: false
+      audiosrc: pianoBmajor
     },
     {
       kbdletter: 'E',
       sound: 'piano-C-major',
-      audiosrc: pianoCmajor,
-      volume: 0.5,
-      isPlaying: false
+      audiosrc: pianoCmajor
     },
     {
       kbdletter: 'A',
       sound: 'piano-D-major',
-      audiosrc: pianoDmajor,
-      volume: 0.5,
-      isPlaying: false
+      audiosrc: pianoDmajor
     },
     {
       kbdletter: 'S',
       sound: 'piano-E-major',
-      audiosrc: pianoEmajor,
-      volume: 0.5,
-      isPlaying: false
+      audiosrc: pianoEmajor
     },
     {
       kbdletter: 'D',
       sound: 'piano-F-major',
-      audiosrc: pianoFmajor,
-      volume: 0.5,
-      isPlaying: false
+      audiosrc: pianoFmajor
     },
     {
       kbdletter: 'Z',
       sound: 'piano-F-sharp',
-      audiosrc: pianoFsharpmajor,
-      volume: 0.5,
-      isPlaying: false
+      audiosrc: pianoFsharpmajor
     },
     {
       kbdletter: 'X',
       sound: 'piano-G-major',
-      audiosrc: pianoGmajor,
-      volume: 0.5,
-      isPlaying: false
+      audiosrc: pianoGmajor
     }, 
     {
       kbdletter: 'C',
       sound: 'piano-G-sharp',
-      audiosrc: pianoGsharpmajor,
-      volume: 0.5,
-      isPlaying: false
+      audiosrc: pianoGsharpmajor
     }
   ]
   return (
