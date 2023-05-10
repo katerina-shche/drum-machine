@@ -1,5 +1,6 @@
 import DrumPad from "./components/DrumPad.js"
 import { v4 as uuidv4 } from 'uuid'
+import { useEffect, useState } from "react";
 
 
 
@@ -12,74 +13,92 @@ import pianoCmajor from './assets/piano-c_C_major.wav'
 import pianoDmajor from './assets/piano-d_D_major.wav'
 import pianoEmajor from './assets/piano-e_E_major.wav'
 import pianoFmajor from './assets/piano-f_F_major.wav'
-import pianoFsharpmajor from './assets/piano-f_F#_major.wav'
+import pianoFsharpmajor from './assets/piano-f_Fsharp_major.wav'
 import pianoGmajor from './assets/piano-g_G_major.wav'
-import pianoGsharpmajor from './assets/piano-g_G#_major.wav'
+import pianoGsharpmajor from './assets/piano-g_Gsharp_major.wav'
 
 
 
 function App() {
+ 
   const piano = [
     {
       kbdletter: 'Q',
       sound: 'piano-A-major',
       audiosrc: pianoAmajor,
-      key: 1
+      'data-key': '81'
     }, 
     {
       kbdletter: 'W',
       sound: 'piano-B-major',
       audiosrc: pianoBmajor,
-      key: 2
+      'data-key': '87'
     },
     {
       kbdletter: 'E',
       sound: 'piano-C-major',
       audiosrc: pianoCmajor,
-      key: 3
+      'data-key': '69'
     },
     {
       kbdletter: 'A',
       sound: 'piano-D-major',
       audiosrc: pianoDmajor,
-      key: 4
+      'data-key': '65'
     },
     {
       kbdletter: 'S',
       sound: 'piano-E-major',
       audiosrc: pianoEmajor,
-      key: 5
+      'data-key': '83'
     },
     {
       kbdletter: 'D',
       sound: 'piano-F-major',
       audiosrc: pianoFmajor,
-      key: 6
+      'data-key': '68'
     },
     {
       kbdletter: 'Z',
       sound: 'piano-F-sharp',
       audiosrc: pianoFsharpmajor,
-      key: 7
+      'data-key': '90'
     },
     {
       kbdletter: 'X',
       sound: 'piano-G-major',
       audiosrc: pianoGmajor,
-      key: 8
+      'data-key': '88'
     }, 
     {
       kbdletter: 'C',
       sound: 'piano-G-sharp',
       audiosrc: pianoGsharpmajor,
-      key: 9
+      'data-key': '67'
     }
   ]
+  const [mode, setMode] = useState(piano)
+  // not mine handleKeyDown
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      const audio = document.querySelector(`audio[data-key="${event.keyCode}"]`);
+      if (audio) {
+        audio.currentTime = 0; // rewind to the start
+        audio.play();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, []);
+
+
   return (
     <div className='drum-machine'>
       drum-machine
       <div className="drum-pads-box">
-        {piano.map((kbdkey) => <DrumPad key={uuidv4()} props={ kbdkey } />)}
+        {mode.map((kbdkey) => <DrumPad key={uuidv4()} props={ kbdkey } />)}
       </div>
       <div className='display'>
         display sound name of the pressed key

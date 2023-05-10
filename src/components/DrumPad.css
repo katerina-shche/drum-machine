@@ -1,7 +1,13 @@
 .drum-pad {
-    background-color: brown;
-    border: 2px yellow solid;
+    background-color: rgb(198, 220, 150);
+    border: 2px rgb(18, 92, 46) solid;
     border-radius: 5px;
-    width: 5vw;
-    height: 5vh;
+    width: 33%;
+    height: 33%;
+    display: flex;
+    flex-flow: column wrap;
+  }
+
+  kbd {
+    font-size: 2rem;
   }

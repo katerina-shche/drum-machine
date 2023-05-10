@@ -9,20 +9,20 @@
 }
 
 .drum-machine {
-  background-color: blue;
+  background-color: rgb(58, 138, 42);
   width: 50vw;
   height: 50vh;
 
 }
 .drum-pads-box {
   width: 30%;
-  height: 30%;
+  height: 80%;
   display: flex;
   flex-flow: row wrap;
 
 }
 .display {
-  background-color: blueviolet;
+  background-color: rgb(18, 192, 36);
   width: 10vw;
   height: 5vh;
 }
