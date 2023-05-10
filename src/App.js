@@ -1,4 +1,8 @@
 import DrumPad from "./components/DrumPad.js"
+import { v4 as uuidv4 } from 'uuid'
+
+
+
 //styles
 import './App.css';
 //sounds
@@ -19,54 +23,63 @@ function App() {
     {
       kbdletter: 'Q',
       sound: 'piano-A-major',
-      audiosrc: pianoAmajor
+      audiosrc: pianoAmajor,
+      key: 1
     }, 
     {
       kbdletter: 'W',
       sound: 'piano-B-major',
-      audiosrc: pianoBmajor
+      audiosrc: pianoBmajor,
+      key: 2
     },
     {
       kbdletter: 'E',
       sound: 'piano-C-major',
-      audiosrc: pianoCmajor
+      audiosrc: pianoCmajor,
+      key: 3
     },
     {
       kbdletter: 'A',
       sound: 'piano-D-major',
-      audiosrc: pianoDmajor
+      audiosrc: pianoDmajor,
+      key: 4
     },
     {
       kbdletter: 'S',
       sound: 'piano-E-major',
-      audiosrc: pianoEmajor
+      audiosrc: pianoEmajor,
+      key: 5
     },
     {
       kbdletter: 'D',
       sound: 'piano-F-major',
-      audiosrc: pianoFmajor
+      audiosrc: pianoFmajor,
+      key: 6
     },
     {
       kbdletter: 'Z',
       sound: 'piano-F-sharp',
-      audiosrc: pianoFsharpmajor
+      audiosrc: pianoFsharpmajor,
+      key: 7
     },
     {
       kbdletter: 'X',
       sound: 'piano-G-major',
-      audiosrc: pianoGmajor
+      audiosrc: pianoGmajor,
+      key: 8
     }, 
     {
       kbdletter: 'C',
       sound: 'piano-G-sharp',
-      audiosrc: pianoGsharpmajor
+      audiosrc: pianoGsharpmajor,
+      key: 9
     }
   ]
   return (
     <div className='drum-machine'>
       drum-machine
       <div className="drum-pads-box">
-        {piano.map((kbdkey) => <DrumPad props={ kbdkey } />)}
+        {piano.map((kbdkey) => <DrumPad key={uuidv4()} props={ kbdkey } />)}
       </div>
       <div className='display'>
         display sound name of the pressed key

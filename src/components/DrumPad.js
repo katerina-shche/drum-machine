@@ -1,4 +1,6 @@
 import React from 'react'
+
+
 //styles
 import './DrumPad.css'
 
@@ -9,7 +11,7 @@ function DrumPad({ props }) {
   }
 
   return (
-    <div key={props.kbdletter} className='drum-pad' onClick={handleClick}>
+    <div className='drum-pad' onClick={handleClick}>
       <kbd>{props.kbdletter}</kbd>
       <span className="sound">{props.sound}</span>  
       <audio id={props.kbdletter}
