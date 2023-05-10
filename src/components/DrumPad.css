@@ -2,10 +2,14 @@
     background-color: rgb(198, 220, 150);
     border: 2px rgb(18, 92, 46) solid;
     border-radius: 5px;
-    width: 33%;
-    height: 33%;
+    flex-basis: 32%;
     display: flex;
     flex-flow: column wrap;
+    align-items: center;
+    /* why it doesnt work?
+    place-items: center;
+    */
+   
   }
 
   kbd {
