@@ -66,7 +66,7 @@ function App() {
     <div className='drum-machine'>
       drum-machine
       <div className="drum-pads-box">
-        {piano.map((key) => <DrumPad props={ key } />)}
+        {piano.map((kbdkey) => <DrumPad props={ kbdkey } />)}
       </div>
       <div className='display'>
         display sound name of the pressed key

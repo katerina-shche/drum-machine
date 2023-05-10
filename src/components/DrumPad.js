@@ -3,8 +3,13 @@ import React from 'react'
 import './DrumPad.css'
 
 function DrumPad({ props }) {
+
+  const handleClick = (e) => {
+    console.log(e)
+  }
+
   return (
-    <div className='drum-pad'>
+    <div key={props.kbdletter} className='drum-pad' onClick={handleClick}>
       <kbd>{props.kbdletter}</kbd>
       <span className="sound">{props.sound}</span>  
       <audio id={props.kbdletter}
