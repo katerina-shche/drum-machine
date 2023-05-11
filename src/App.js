@@ -24,7 +24,7 @@ import kick from './assets/drums/Kick.mp3'
 import openHH from './assets/drums/Open-HH.mp3'
 
 function App() {
- 
+ //colections of keys+sounds pairs for modes
   const piano = [
     {
       kbdletter: 'Q',
@@ -137,7 +137,13 @@ function App() {
       'data-key': '67'
     }
   ]
-  const [mode, setMode] = useState(piano)
+  const [mode, setMode] = useState(drums)
+  const [volume, setVolume] = useState(50)
+
+  //handleVolumeChange
+  const handleVolumeChange = (e) => {
+    setVolume(e.target.value);
+  }
 
   //handleKeyDown 
   useEffect(() => {
@@ -148,6 +154,7 @@ function App() {
       if (audio) {
         //show sound name on display
         display.innerHTML = mode.filter(item => item['data-key'] === datakey.toString())[0].sound
+        audio.volume = volume/100 //set the volume
         audio.currentTime = 0; // rewind to the start
         audio.play(); // play audio
       }
@@ -157,17 +164,32 @@ function App() {
     return () => {
     window.removeEventListener('keydown', handleKeyDown);
     };
-  }, [mode]);
+  }, [mode, volume]);
 
 
   return (
     <div className='drum-machine'>
       drum-machine
       <div className="drum-pads-box">
-        {mode.map((item) => <DrumPad key={uuidv4()} props={ item } />)}
+        {mode.map((item) => <DrumPad key={uuidv4()} props={ item } audiovolume={ volume } />)}
       </div>
-      <div className='display'>
-        play a sound
+      <div className="tools">
+        <label htmlFor="volume">
+          {`volume is ${volume}`}
+          <input
+            id='volume'
+            type="range"
+            min='0'
+            max='100'
+            step='1'
+            value={volume}
+            onChange={handleVolumeChange}
+            />
+          
+        </label>
+        <div className='display'>
+        play something
+        </div>
       </div>
       
     </div>
