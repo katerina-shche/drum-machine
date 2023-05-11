@@ -7,8 +7,10 @@ import './DrumPad.css'
 function DrumPad({ props }) {
 
   const handleClick = (e) => {
-    console.log(e.target.getAttribute('data-key'))
-    const audio = document.querySelector(`audio[data-key="${e.target.getAttribute('data-key')}"]`)
+    const datakey = e.target.getAttribute('data-key');
+    const audio = document.querySelector(`audio[data-key="${datakey}"]`)
+    const display = document.querySelector('.display')
+    display.innerHTML = props.sound
     audio.currentTime = 0; // rewind to the start
     audio.play();
 
