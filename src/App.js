@@ -169,7 +169,6 @@ function App() {
 
   return (
     <div id='drum-machine'>
-      drum-machine
       <div id="drum-pads-box">
         {mode.map((item) => <DrumPad key={uuidv4()} props={ item } audiovolume={ volume } />)}
       </div>
