@@ -145,12 +145,12 @@ function App() {
     setVolume(e.target.value);
   }
 
-  //handleKeyDown 
+  //handleKeyDown volume+play+display
   useEffect(() => {
     const handleKeyDown = (e) => {
       const datakey = e.keyCode
       const audio = document.querySelector(`audio[data-key="${datakey}"]`);
-      const display = document.querySelector('.display')
+      const display = document.querySelector('#display')
       if (audio) {
         //show sound name on display
         display.innerHTML = mode.filter(item => item['data-key'] === datakey.toString())[0].sound
@@ -168,12 +168,12 @@ function App() {
 
 
   return (
-    <div className='drum-machine'>
+    <div id='drum-machine'>
       drum-machine
-      <div className="drum-pads-box">
+      <div id="drum-pads-box">
         {mode.map((item) => <DrumPad key={uuidv4()} props={ item } audiovolume={ volume } />)}
       </div>
-      <div className="tools">
+      <div id="tools">
         <label htmlFor="volume">
           {`volume is ${volume}`}
           <input
@@ -187,8 +187,15 @@ function App() {
             />
           
         </label>
-        <div className='display'>
+        <div id='display'>
         play something
+        </div>
+        <div id="toggle-container">
+         <h3>piano</h3>
+            <div id='toggle-box'>
+                <div id='toggle'></div>
+            </div>
+          <h3>drums</h3>
         </div>
       </div>
       

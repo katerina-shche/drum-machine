@@ -6,10 +6,11 @@ import './DrumPad.css'
 
 function DrumPad({ props, audiovolume }) {
 
+// handleClick volume+play+display
   const handleClick = (e) => {
     const datakey = e.target.getAttribute('data-key');
     const audio = document.querySelector(`audio[data-key="${datakey}"]`)
-    const display = document.querySelector('.display')
+    const display = document.querySelector('#display')
     display.innerHTML = props.sound
     audio.currentTime = 0; // rewind to the start
     audio.volume = audiovolume/100 //set the volume
