@@ -33,7 +33,7 @@
 }
 
 #toggle-container {
-  width: 50%;
+  width: 100%;
   display: flex;
   background-color: rgb(40, 105, 170);
 }
@@ -46,7 +46,7 @@
   display: block;
   flex-basis: calc(100% / 3);
   }
-#toggle {
+#mode-toggle {
   display: block;
   width: 60%;
   height: 100%;

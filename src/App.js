@@ -1,6 +1,6 @@
 import DrumPad from "./components/DrumPad.js"
 import { v4 as uuidv4 } from 'uuid'
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 //styles
 import './App.css';
 //sounds
@@ -25,7 +25,7 @@ import openHH from './assets/drums/Open-HH.mp3'
 
 function App() {
  //colections of keys+sounds pairs for modes
-  const piano = [
+  const piano = useRef([
     {
       kbdletter: 'Q',
       sound: 'Piano-A-Major',
@@ -80,8 +80,8 @@ function App() {
       audiosrc: pianoGsharpmajor,
       'data-key': '67'
     }
-  ]
-  const drums = [
+  ])
+  const drums = useRef([
     {
       kbdletter: 'Q',
       sound: 'Clap',
@@ -136,15 +136,20 @@ function App() {
       audiosrc: openHH,
       'data-key': '67'
     }
-  ]
-  const [mode, setMode] = useState(drums)
+  ])
+  const [mode, setMode] = useState(piano)
   const [volume, setVolume] = useState(50)
 
   //handleVolumeChange
   const handleVolumeChange = (e) => {
-    setVolume(e.target.value);
+    setVolume(e.target.value)
   }
-
+  //Switch from piano to drums
+  const handleModeToggle = () => {
+    setMode(mode === piano ? drums : piano)
+    
+    
+  }
   //handleKeyDown volume+play+display
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -170,7 +175,7 @@ function App() {
   return (
     <div id='drum-machine'>
       <div id="drum-pads-box">
-        {mode.map((item) => <DrumPad key={uuidv4()} props={ item } audiovolume={ volume } />)}
+        {mode.current.map((item) => <DrumPad key={uuidv4()} props={ item } audiovolume={ volume } />)}
       </div>
       <div id="tools">
         <label htmlFor="volume">
@@ -192,7 +197,8 @@ function App() {
         <div id="toggle-container">
          <h3>piano</h3>
             <div id='toggle-box'>
-                <div id='toggle'></div>
+                <div id='mode-toggle'
+                onClick={handleModeToggle}></div>
             </div>
           <h3>drums</h3>
         </div>
