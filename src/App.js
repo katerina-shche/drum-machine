@@ -188,6 +188,7 @@ function App() {
             step='1'
             value={volume}
             onChange={handleVolumeChange}
+            style={{background: `linear-gradient(to right,  rgb(22, 238, 44) 0%,  rgb(22, 238, 44) ${volume}%, white ${volume}%)`}}
             />
           
         </label>
