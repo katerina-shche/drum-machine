@@ -179,7 +179,7 @@ function App() {
       </div>
       <div id="tools">
         <label htmlFor="volume">
-          {`volume is ${volume}`}
+          {`Volume is ${volume}%`}
           <input
             id='volume'
             type="range"

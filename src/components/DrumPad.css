@@ -1,5 +1,5 @@
 .drum-pad {
-    background-color: rgb(198, 220, 150);
+    background-color: rgb(255, 255, 255);
     border-radius: 3px;
     box-shadow: 4px -4px 4px 0px rgba(0, 0, 0, 0.4);
     flex-basis: calc(92% / 3);
@@ -7,6 +7,9 @@
     flex-flow: column wrap;
     align-items: center;
     justify-content: center;
+  }
+  .drum-pad:hover {
+    cursor: pointer;
   }
 
   kbd {
