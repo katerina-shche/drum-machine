@@ -158,7 +158,7 @@ function App() {
       const display = document.querySelector('#display')
       if (audio) {
         //show sound name on display
-        display.innerHTML = mode.filter(item => item['data-key'] === datakey.toString())[0].sound
+        display.innerHTML = mode.current.filter(item => item['data-key'] === datakey.toString())[0].sound
         audio.volume = volume/100 //set the volume
         audio.currentTime = 0; // rewind to the start
         audio.play(); // play audio
@@ -198,7 +198,8 @@ function App() {
          <h3>piano</h3>
             <div id='toggle-box'>
                 <div id='mode-toggle'
-                onClick={handleModeToggle}></div>
+                onClick={handleModeToggle}
+                style={{transform: mode === piano ? 'translateX(0)' : 'translateX(50%)'}}></div>
             </div>
           <h3>drums</h3>
         </div>

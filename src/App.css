@@ -48,10 +48,10 @@
   }
 #mode-toggle {
   display: block;
-  width: 60%;
+  width: calc(100% / 3 * 2);
   height: 100%;
-  float: right;
   background-color: black;
+  transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 
