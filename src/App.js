@@ -139,6 +139,7 @@ function App() {
   ])
   const [mode, setMode] = useState(piano)
   const [volume, setVolume] = useState(50)
+  
 
   //handleVolumeChange
   const handleVolumeChange = (e) => {
@@ -156,6 +157,11 @@ function App() {
       const datakey = e.keyCode
       const audio = document.querySelector(`audio[data-key="${datakey}"]`);
       const display = document.querySelector('#display')
+      const button = document.querySelector(`.drum-pad[data-key="${datakey}"]`)
+      console.log(button)
+      button.classList.add('isShining')
+      setTimeout(() => { button.classList.remove('isShining')
+        }, 1000)
       if (audio) {
         //show sound name on display
         display.innerHTML = mode.current.filter(item => item['data-key'] === datakey.toString())[0].sound
