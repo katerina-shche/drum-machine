@@ -24,9 +24,8 @@ function DrumPad({ props, audiovolume }) {
   }
 
   return (
-    <div data-key={props['data-key']} className='drum-pad' onClick={handleClick}>
-      <kbd data-key={props['data-key']}>{props.kbdletter}</kbd>
-      <span data-key={props['data-key']} className="sound">{props.sound}</span>  
+    <div data-key={props['data-key']} className='drum-pad' id={props.sound} onClick={handleClick}>
+      {props.kbdletter}
       <audio data-key={props['data-key']} id={props.kbdletter}
         className="clip"
         src={props.audiosrc}
